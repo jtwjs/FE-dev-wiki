@@ -2,6 +2,8 @@
 
 ## DEV_ROAD
 
-- [프론트엔드 생존코스](README.md)
+- [💪🏻 생존하기](README.md)
+- [Week 1](week-1/README.md)
+  - [개발 환경 세팅](week-1/setting.md)
 
 ## 💡Ah-Ha!
