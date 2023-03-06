@@ -1,7 +1,6 @@
 # 개발 환경 세팅
 
-> 매번 개발 환경 세팅 할 때 마다 애먹었던 이유는 <span style='background: #ff4949; color: white'> 변화가 빠르기 때문 </span><span style='background: #009888; color: white;'>
-> 전체적인 흐름을 파악</span>하고 앞으로의 <span style='background: #009888; color: white;' >변경에 대응할 수 있는 능력을 키우자.</span>
+> 매번 개발 환경 세팅 할 때 마다 애먹었던 이유는 **변화가 빠르기 때문!** **전체적인 흐름을 파악**하고 앞으로의 **변경에 대응할 수 있는 능력을 키우자.**
 
 ## TypeScript + React + Jest + ESLint + Parcel 개발 환경 세팅
 
@@ -9,7 +8,7 @@
 
 > npm init
 
-<b>npm init시 묻는 옵션 내용</b>
+**npm init시 묻는 옵션 내용**
 
 ```bash
 package name: (my-app)
@@ -70,7 +69,7 @@ npm i -y
 touch .gitignore
 ```
 
-<b>.gitignore</b>
+**.gitignore**
 
 ```
 // 모두 같은 의미
@@ -79,14 +78,14 @@ node_modules/  -> 폴더라는 의미만  강조
 node_modules   -> 폴더든 뭐든 알게뭐야 그냥 노드 모듈즈지 ㅋㅋ
 ```
 
-<b>.gitignore 그냥 가져다 쓰자</b>
+**.gitignore 그냥 가져다 쓰자**
 
 1. [.gitignore 생성 웹사이트](https://www.toptal.com/developers/gitignore)
 2. [github gitignore repo 🥰](https://github.com/github/gitignore)
 
 ### dependencies
 
-<b>devDependencies는 뭔데?</b>
+**devDependencies는 뭔데?**
 
 > 배포될 때 쓰이는 것이 아닌 도구로서 쓰이는 것들을 devDependencies로!
 
@@ -123,7 +122,7 @@ npm i -D eslint
 npx eslint --init
 ```
 
-<b>with Jest </b>
+**with Jest**
 
 > Jest를 설치하기 전 미리 설정해두자.
 
@@ -135,7 +134,7 @@ env: {
 },
 ```
 
-<b>.eslintignore</b>
+**.eslintignore**
 
 > eslint를 실행할 때 제외할 파일들을 지정 가능
 
@@ -166,7 +165,7 @@ npm i -D jest @types/jest @swc/core @swc/jest \
   @testing-library/react @testing-library/jest-dom
 ```
 
-<b>jest.config.js 파일을 작성해 테스트에서 SWC를 사용하자</b>
+**jest.config.js 파일을 작성해 테스트에서 SWC를 사용하자**
 
 > 타입스크립트 + SWC 환경에서는 추가적인 설정이 필요하다.
 
@@ -238,7 +237,7 @@ npm i -D parcel
 
 - [package.json 참고용](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/package.json)
 
-<b>index.html</b>
+**index.html**
 
 ```html
 <!DOCTYPE html>
