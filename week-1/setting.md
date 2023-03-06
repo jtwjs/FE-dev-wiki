@@ -1,6 +1,10 @@
 # 개발 환경 세팅
 
-> 매번 개발 환경 세팅 할 때 마다 애먹었던 이유는 **변화가 빠르기 때문!** **전체적인 흐름을 파악**하고 앞으로의 **변경에 대응할 수 있는 능력을 키우자.**
+{% hint style="success" %}
+매번 개발 환경 세팅 할 때 마다 애먹었던 이유는 **변화가 빠르기 때문!**
+
+**전체적인 흐름을 파악**하고 앞으로의 **변경에 대응할 수 있는 능력을 키우자.**
+{% endhint %}
 
 ## TypeScript + React + Jest + ESLint + Parcel 개발 환경 세팅
 
@@ -110,9 +114,14 @@ npx tsc --init
 
 {% hint style="info" %}
 tsconfig.json 파일의 jsx 속성은 변경하자
+
 "jsx":"react-jsx"
+
 -> react-jsx 모드는 jsx가 사용되는 모든 파일에서 import React 없이 사용할 수 있도록 해준다.
--> React17 이후 React는 React.createElement를 사용하지 않고 JSX를 자동으로 변환하는 기능이 추가 되었다. (물론 React가 제공하는 다른 훅들을 사용할 땐 임포트 해야함)
+
+-> React17 이후 React는 React.createElement를 사용하지 않고 JSX를 자동으로 변환하는 기능이 추가 되었다.
+
+(물론 React가 제공하는 다른 훅들을 사용할 땐 임포트 해야함)
 {% endhint %}
 
 ### ESLint 설치
@@ -203,9 +212,12 @@ module.exports = {
 ```
 
 {% hint style="warning" %}
-SWC가 뭐지? 아~ babel의 대체제구나
+
+### SWC가 뭐지? 아~ babel의 대체제구나
+
 -> Rust로 짜여진 컴파일러로, 현재는 JavaScript/TypeScript 트랜스파일링을 주로 담당하고 있다
-속도와 성능 개선에 초점을 맞추고 있으며[2], 기존의 Babel 등의 트랜스파일러를 압도적으로 뛰어넘는 성능을 보여준다.
+
+속도와 성능 개선에 초점을 맞추고 있으며[, 기존의 Babel 등의 트랜스파일러를 압도적으로 뛰어넘는 성능을 보여준다.
 {% endhint %}
 
 ### Parcel 설치
