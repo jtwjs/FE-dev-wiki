@@ -1,7 +1,7 @@
 # 개발 환경 세팅
 
 {% hint style="success" %}
-매번 개발 환경 세팅 할 때 마다 애먹었던 이유는 **변화가 빠르기 때문!**
+매번 개발 환경 세팅 할 때 마다 애먹었던 이유는 **기술의 변화가 빠르기 때문!**
 
 **전체적인 흐름을 파악**하고 앞으로의 **변경에 대응할 수 있는 능력을 키우자.**
 {% endhint %}
@@ -119,9 +119,12 @@ tsconfig.json 파일의 jsx 속성은 변경하자
 
 -> react-jsx 모드는 jsx가 사용되는 모든 파일에서 import React 없이 사용할 수 있도록 해준다.
 
--> React17 이후 React는 React.createElement를 사용하지 않고 JSX를 자동으로 변환하는 기능이 추가 되었다.
+-> React 17 에서 React는 React.createElement를 사용하지 않고 JSX를 자동으로 변환하는 기능이 추가 되었다. 이 기능을 지원하려면 'jsx' 속성은 "react-jsx" 설정해야 한다.
 
-(물론 React가 제공하는 다른 훅들을 사용할 땐 임포트 해야함)
+**지금 내 tsconfig.json에 jsx가 preserve 설정인데도 자동 변환 기능이 잘되는데??**
+
+-> 설정해놓은 값이 react-jsx가 아니여도 npm start 실행 시 강제적으로 'react-jsx'로 덮어씌워 적용된다고 한다
+
 {% endhint %}
 
 ### ESLint 설치
@@ -211,15 +214,6 @@ module.exports = {
 };
 ```
 
-{% hint style="warning" %}
-
-### SWC가 뭐지? 아~ babel의 대체제구나
-
--> Rust로 짜여진 컴파일러로, 현재는 JavaScript/TypeScript 트랜스파일링을 주로 담당하고 있다
-
-속도와 성능 개선에 초점을 맞추고 있으며, 기존의 Babel 등의 트랜스파일러를 압도적으로 뛰어넘는 성능을 보여준다.
-{% endhint %}
-
 ### Parcel 설치
 
 > parcel을 통해 웹 개발 서버를 띄울 수 있다.
@@ -263,7 +257,36 @@ npm i -D parcel
 </html>
 ```
 
-### 더 공부해야 할 것들
+## 키워드 정리
+
+### SWC (stands for Speedy Web Compiler)
+
+> **Rust로 짜여진 컴파일러**로, 현재는 JavaScript/TypeScript **트랜스파일링**을 주로 담당하며 **Babel의 역할을 대체**한다 👋
+
+- **속도와 성능 개선에 초점**을 맞추고 있으며, 기존의 Babel 등의 트랜스파일러를 **압도적으로 뛰어넘는 성능**을 보여준다.
+- TypeScript 컴파일은 지원하지만, 타입 체킹을 수행하지 않기 때문에 엄밀히 말하면 tsc를 완전히 대체하지는 않는다.
+- 1.2.67버전부터 소스 압축(minification) 및 죽은 코드 제거(dead code elimination) 기능을 지원
+
+**SWC(Rust)가 빠른 이유**
+
+- Rust는 **저수준(기계어) 언어** 이기 때문이다. 자바나 자바스크립트 같은 고수준 언어는 컴퓨터가 해석할 수 있도록 변환하는 중간 단계(컴파일링)가 필요한데 Rust는 그 단계가 필요없다.
+- Rust라는 프로그래밍 언어가 이벤트 루프 기반의 싱글 스레드 언어인 자바스크립트와는 다르게 병렬 처리를 고려해서 설계된 언어이기 때문에 **동시에 여러 파일을 처리**할 수 있어서 빠르다
+
+**컴파일링? 트랜스파일링?**
+
+- 컴파일링이란 사람이 이해하기 쉽게 추상화가 많이 된 고수준 언어에서 기계(컴퓨터)가 이해할 수 있는 저수준 언어로 변환하는 것을 의미한다.
+- 트랜스파일링은 컴파일링의 하위 분류로 언어를 변환한다는 점은 동일하지만 유사한 두 언어 사이에서 변환해주는 한정된 역할을 제공한다. (Ex ES2021 <-> ES2013, Typescript <-> Javascript)
+- 트랜스파일이 컴파일의 하위 범주이기 때문에 구분하지 않고 부를때도 있지만 차이는 명확히 인지하고 넘어가자
+
+### Webpack? Vite? TurpboPack?
+
+> 여러개 파일을 하나의 파일로 합쳐주는 **번들러(bundelr)**
+
+**번들러(bundler)란?**
+
+> 하나의 시작점(entry point)로부터 의존적인 모듈을 전부 찾아내서 하나의 결과물을 만들어 낸다.
+
+## 더 공부해야 할 것들
 
 1. [**fnm (Fast Node Manager)**](https://fnm.vercel.app/)
 2. [**parcel**](https://medium.com/better-programming/all-you-need-to-know-about-parcel-dbe151b70082)
@@ -271,7 +294,7 @@ npm i -D parcel
 4. [**why use should SWC**](https://medium.com/@KasraKhosravi/why-you-should-use-swc-and-not-babel-45b9dd15d058)
 5. [**An In-Depth Explanation of package.json’s Dependencies**](https://medium.com/better-programming/package-jsons-dependencies-in-depth-a1f0637a3129)
 
-### 간단 회고 (2023.03.06 월)
+## 간단 회고 (2023.03.06 월)
 
 글쓰는건 너무 x 100 어렵다..😭
 강의를 들으면서 정리하려고 하니 시간이 너무 소요된다.
